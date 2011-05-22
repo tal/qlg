@@ -1,8 +1,29 @@
-= log
+= qlg
 
-Description goes here.
+A tool for very quickly logging. It will place the logs by default in the log/ directory, if that directory doesn't
+exist it will be added to the current running directory.
 
-== Contributing to log
+To log to a file just do
+
+  Qlg.mylog # => Logger.new('log/mylog.log')
+  Qlg.mylog.info('foo') {'bar'}
+
+You can also rapidly output to a default log. This log is named after the environment if RACK_ENV, RAILS_ENV, or RACK_ENV
+is defined, otherwise it will output to default.log
+
+  Qlg.info('foo') {'bar'}
+  Qlg.fatal('foo') {'bar'}
+  etc...
+
+These are setup with method missing, if you're concerned about the speed of this use Qlg.create_log('logname') to initialize
+the log earlier. I'm not honestly sure how much faster this is or not.
+
+You can edit the logger easily
+
+  Qlg.mylog.level = Logger::ERROR
+
+
+== Contributing to qlg
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it

@@ -4,9 +4,13 @@ module Qlg
   VERSION = File.open(File.expand_path(File.join(File.dirname(__FILE__),'..','VERSION'))).read.freeze
   
   if File.directory?('log')
-    LOGS = Hash.new {|h,k| h[k] = Logger.new("log/#{k}.log")}
+    LOGS = Hash.new do |h,k|
+      h[k] = Logger.new("log/#{k}.log")
+    end
   else
-    LOGS = Hash.new {|h,k| h[k] = Logger.new("#{k}.log")}
+    LOGS = Hash.new do |h,k|
+      h[k] = Logger.new("#{k}.log")
+    end
   end
   
   extend self
