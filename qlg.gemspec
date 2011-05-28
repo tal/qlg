@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tal Atlas"]
-  s.date = %q{2011-05-22}
+  s.date = %q{2011-05-27}
   s.description = %q{Really fast way to output logs from your app.}
   s.email = %q{me@tal.by}
   s.extra_rdoc_files = [
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/qlg.rb",
+    "qlg.gemspec",
     "spec/log_spec.rb",
     "spec/spec_helper.rb"
   ]
